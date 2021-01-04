@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "automlaks-dd40"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "automlaks-dd40"
+  template:
+    metadata:
+      labels:
+        app: "automlaks-dd40"
+    spec:
+      containers:
+        - name: "automlaks-dd40"
+          image: "madvisorautoml.azurecr.io/automlaks"
+          ports:
+          - containerPort: 80
